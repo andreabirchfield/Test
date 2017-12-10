@@ -14,5 +14,5 @@
    <!-- <plugin name="cordova-plugin-camera" source="npm" />-->
    <plugin name="cordova-plugin-camera" spec="1.2.0" source="npm" />
     <plugin name="cordova-plugin-contacts" source="npm" />
-    <plugin name="cordova-plugin-battery-status" source="npm" spec="1.2.5"/>
+    <plugin name="cordova-plugin-fonts" source="npm"/>
 </widget>

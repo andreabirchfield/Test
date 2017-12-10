@@ -4,18 +4,6 @@
     <link rel="stylesheet" type="text/css" href="styles/example5.css" />
     <script src="js/example5.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script>
-    var objContact;
-    var picturesource;
-    var destinationtype;
-    document.addEventListener("deviceready",onDeviceReady,false);
-    function onDeviceReady()
-    {
-        picturesource = navigator.camera.PictureSourceType;
-        destinationtype = navigator.camera.DestinationType;
-        objContact = navigator.contacts.create();
-        }
-    </script>
     
 </head>
 <body>
@@ -26,7 +14,7 @@
         <option value="None">Please select an option.</option>
         <option value="camera">Take a Picture</option>
         <option value="contacts">Access Contacts</option>
-        <option value="battery">Battery</option>
+        <option value="font">Fonts</option>
     </select>
     </section>
     <hr>
@@ -47,9 +35,12 @@
         <label>Contact Name: </label>
         <label id="contactname"></label>
     </section>
-    <section id="battlevel">
-        <h2>Battery Level</h2>
-        <button onclick="onBatteryStatus();">Battery Info</button>
-    </section>
+    
+    <section id="fonts">
+        <h3>Font List</h3>
+        <button onclick="FontList();">Fonts</button>
+
+     
+    </section> 
 </body>
 </html>

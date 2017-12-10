@@ -2,7 +2,7 @@ function MenuChoice(selection)
 {
     document.getElementById("picture").style.visibility = "hidden";
     document.getElementById("contacts").style.visibility ="hidden";
-    document.getElementById("battery").style.visibility = "hidden";
+    document.getElementById("fonts").style.visibility = "hidden";
 
 switch (selection)
 {case "camera":
@@ -11,8 +11,8 @@ break;
 case "contacts":
     document.getElementById("contacts").style.visibility = "visible";
 break;
-case "battlevel":
-    document.getElementById("battery").style.visibility = "visible";
+case "font":
+    document.getElementById("fonts").style.visibility = "visible";
     break;
 case "None":
 //No menu item selected, so no section should be displayed
@@ -74,7 +74,31 @@ if (contact.emails !== null)
 }
 );
 }
-window.addEventListener("batterystatus", onBatteryStatus, false);
-function onBatteryStatus(info) { 
-   alert("BATTERY STATUS:  Level: " + info.level + " isPlugged: " + info.isPlugged); 
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    console.log(navigator.Fonts);
+}
+
+function FontList()
+{
+if (navigator.Fonts) {
+    console.log("Fonts object in navigator");
+    navigator.Fonts.getFontList(
+        function (fontList) {
+            if (fontlist) {
+                for (var i = 0; i < fontlist.length; i++) {
+                    console.log("Font: " + fontlist[i]);
+                }
+            }
+        },
+        function (error) {
+            console.log("FontList error: " + error);
+        }
+    );
+} else {
+    console.log("Plugin error: Fonts plugin not found (is it installed?)");
+}
 }
